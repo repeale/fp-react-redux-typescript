@@ -13,13 +13,17 @@ const FOLDER = {
 
 const webpackConfig = {
   entry: {
-    app: ['./src/index.js']
+    app: ['./src/index.tsx']
   },
   module: {
     rules: [
       {
+        test: /\.(ts|tsx)?$/,
+        include: FOLDER.SRC,
+        use: ['ts-loader']
+      },
+      {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
         include: FOLDER.SRC,
         use: ['babel-loader']
       }
