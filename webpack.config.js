@@ -2,8 +2,8 @@ const webpack = require('webpack')
 const path = require('path')
 
 // --- plugins
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var WebpackCleanupPlugin = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const WebpackCleanupPlugin = require('clean-webpack-plugin')
 
 // --- folders
 const FOLDER = {
@@ -38,6 +38,7 @@ const webpackConfig = {
     publicPath: '/',
     pathinfo: false
   },
+  devtool: 'inline-source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new WebpackCleanupPlugin([FOLDER.DIST]),
