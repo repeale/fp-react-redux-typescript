@@ -1,0 +1,31 @@
+{
+  "name": "my-stack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "dev": "webpack-dev-server --mode development --hot --progress --color --port 3000 --open",
+    "build": "webpack -p --progress --colors",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "7.1.0",
+    "@babel/preset-env": "7.1.0",
+    "@babel/preset-react": "7.0.0",
+    "babel-loader": "8.0.2",
+    "clean-webpack-plugin": "0.1.19",
+    "html-webpack-plugin": "3.2.0",
+    "react-hot-loader": "4.3.11",
+    "webpack-cli": "3.1.0",
+    "webpack-dev-server": "3.1.8",
+    "webpack": "4.19.1"
+  },
+  "dependencies": {
+    "react": "16.5.2",
+    "react-dom": "16.5.2"
+  }
+}
