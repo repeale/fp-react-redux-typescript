@@ -1,0 +1,25 @@
+const merge = require('webpack-merge')
+
+// --- config:common
+const common = require('./webpack.common.js')
+
+// --- plugins
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+// --- settings
+const SETTINGS = require('./settings')
+
+// --- config:production
+module.exports = merge(common, {
+  mode: 'production',
+  devtool: 'source-map',
+  plugins: [
+    new HtmlWebpackPlugin({
+      ...SETTINGS.HTML_WEBPACK_PLUGIN,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
+    })
+  ]
+})

@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "dev": "webpack-dev-server --mode development --hot --progress --color --port 3000 --open",
-    "build": "webpack -p --progress --colors",
+    "dev": "webpack-dev-server --config config/webpack.dev.js --hot --progress --color --port 3000 --open",
+    "build": "webpack --config config/webpack.prod.js --progress --colors",
     "test": "echo \"No test specified\" && exit 0"
   },
   "keywords": [],
@@ -28,7 +27,8 @@
     "typescript": "3.0.3",
     "webpack": "4.20.2",
     "webpack-cli": "3.1.1",
-    "webpack-dev-server": "3.1.9"
+    "webpack-dev-server": "3.1.9",
+    "webpack-merge": "4.1.4"
   },
   "dependencies": {
     "react": "16.5.2",
