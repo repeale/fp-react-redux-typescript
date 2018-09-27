@@ -5,6 +5,7 @@ const common = require('./webpack.common.js')
 
 // --- plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 // --- settings
 const SETTINGS = require('./settings')
@@ -31,6 +32,13 @@ module.exports = merge(common, {
           chunks: 'all',
         }
       }
-    }
+    },
+    minimizer: [
+      new TerserPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      })
+    ]
   }
 })
