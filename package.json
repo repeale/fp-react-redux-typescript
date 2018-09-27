@@ -2,7 +2,6 @@
   "name": "my-stack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config config/webpack.dev.js --hot --progress --color --port 3000 --open",
     "build": "webpack --config config/webpack.prod.js --progress --colors",
