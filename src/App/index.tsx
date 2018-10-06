@@ -4,8 +4,8 @@ import {connect} from 'react-redux'
 // --- View
 
 const App = ({counter = 1, onIncrement, onDecrement}) => (
-  <div className="app">
-    <div className="greeting">Counter: {counter}</div>
+  <div>
+    <div>Counter: {counter}</div>
     <div>
       <button onClick={onDecrement}>-</button>
       <button onClick={onIncrement}>+</button>
