@@ -1,6 +1,10 @@
 import {combineReducers} from 'redux'
-import {reducer as UserReducer} from '../App'
+import * as App from '../App'
 
-export default combineReducers({
-  UserReducer
+export interface RootState {
+  app: App.State
+}
+
+export const rootReducer = combineReducers<RootState>({
+  app: App.reducer
 })

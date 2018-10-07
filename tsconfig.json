@@ -1,23 +1,14 @@
 {
-    "compilerOptions": {
-        "lib": [
-            "es6",
-            "dom"
-        ],
-        "allowJs": true,
-        "jsx": "react",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "noImplicitAny": false,
-        "noResolve": false,
-        "removeComments": true,
-        "sourceMap": true,
-        "strict": true,
-        "target": "es6"
-    },
-    "include": [
-        "./src"
-    ]
+  "compilerOptions": {
+    "lib": ["es6", "dom"],
+    "jsx": "react",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "noUnusedLocals": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es6"
+  },
+  "include": ["./src"]
 }
-
-

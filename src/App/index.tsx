@@ -1,9 +1,17 @@
 import * as React from 'react'
 import {connect} from 'react-redux'
+import {Dispatch, Reducer} from 'redux'
+import {RootState} from '../reducers/root'
 
 // --- View
 
-const App = ({counter = 1, onIncrement, onDecrement}) => (
+interface Props {
+  counter: number
+  onIncrement: () => any
+  onDecrement: () => any
+}
+
+const App = ({counter, onIncrement, onDecrement}: Props) => (
   <div>
     <div>Counter: {counter}</div>
     <div>
@@ -13,27 +21,34 @@ const App = ({counter = 1, onIncrement, onDecrement}) => (
   </div>
 )
 
-const mapStateToProps = ({UserReducer}) => ({
-  counter: UserReducer.counter
+const mapStateToProps = (RootState: RootState) => ({
+  counter: RootState.app.counter
 })
 
-const mapDispatchToProps = dispatch => ({
-  onDecrement: () => dispatch(DecrementEnthusiasm.of()),
-  onIncrement: () => dispatch(IncrementEnthusiasm.of())
+const mapDispatchToProps = (dispatch: Dispatch<Action>) => ({
+  onDecrement: () => dispatch(Decrement.of()),
+  onIncrement: () => dispatch(Increment.of())
 })
 
-export default connect(
+export const component = connect(
   mapStateToProps,
   mapDispatchToProps
 )(App)
 
 // --- Reducer
 
-interface State {
+export interface State {
   counter: number
 }
 
-export const reducer = (state = {counter: 1}, action: Action): State => {
+const defaultState: State = {
+  counter: 0
+}
+
+export const reducer: Reducer<State, Action> = (
+  state = defaultState,
+  action
+): State => {
   switch (action.type) {
     case 'INCREMENT':
       return {counter: state.counter + 1}
@@ -46,20 +61,20 @@ export const reducer = (state = {counter: 1}, action: Action): State => {
 
 // --- Actions
 
-type Action = DecrementEnthusiasm | IncrementEnthusiasm
+type Action = Decrement | Increment
 
-class DecrementEnthusiasm {
+class Decrement {
   public readonly type = 'DECREMENT'
   public static of() {
-    return Object.assign({}, new DecrementEnthusiasm())
+    return Object.assign({}, new Decrement())
   }
   constructor() {}
 }
 
-class IncrementEnthusiasm {
+class Increment {
   public readonly type = 'INCREMENT'
   public static of() {
-    return Object.assign({}, new IncrementEnthusiasm())
+    return Object.assign({}, new Increment())
   }
   constructor() {}
 }

@@ -24,6 +24,7 @@
     "@types/node": "10.11.4",
     "@types/react": "16.4.15",
     "@types/react-dom": "16.0.8",
+    "@types/react-redux": "6.0.9",
     "@types/webpack-env": "1.13.6",
     "babel-loader": "8.0.4",
     "clean-webpack-plugin": "0.1.19",
