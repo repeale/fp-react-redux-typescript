@@ -1,4 +1,4 @@
-# my-stack
+# fp-react-redux-typescript
 
 ## Features
 
@@ -9,11 +9,7 @@
 
 ## Installation
 
-* `git clone git@github.com:my-stack.git`
-* cd my-stack
+* `git clone https://github.com/repeale/fp-react-redux-typescript.git my-folder`
+* cd my-folder
 * npm install
-* npm start
-* visit `http://localhost:8080/`
-
-## Todo
-- [ ] terser-webpack-plugin
+* npm dev
