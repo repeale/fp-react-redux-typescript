@@ -12,4 +12,4 @@
 * `git clone https://github.com/repeale/fp-react-redux-typescript.git my-folder`
 * cd my-folder
 * npm install
-* npm dev
+* npm run dev
