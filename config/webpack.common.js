@@ -1,6 +1,6 @@
 // --- plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const WebpackCleanupPlugin = require('clean-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 // --- settings
 const SETTINGS = require('./settings')
@@ -33,10 +33,7 @@ const webpackConfig = {
     pathinfo: false
   },
   plugins: [
-    new WebpackCleanupPlugin(
-      [SETTINGS.DIST_DIR],
-      { root: SETTINGS.BASE_DIR, verbose: true}
-    ),
+    new CleanWebpackPlugin({verbose: true}),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       hash: false,
