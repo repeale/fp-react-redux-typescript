@@ -30,10 +30,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>) => ({
   onIncrement: () => dispatch(Increment.of())
 })
 
-export const component = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App)
+export const component = connect(mapStateToProps, mapDispatchToProps)(App)
 
 // --- Reducer
 
@@ -66,7 +63,7 @@ type Action = Decrement | Increment
 class Decrement {
   public readonly type = 'DECREMENT'
   public static of() {
-    return Object.assign({}, new Decrement())
+    return new Decrement()
   }
   constructor() {}
 }
@@ -74,7 +71,7 @@ class Decrement {
 class Increment {
   public readonly type = 'INCREMENT'
   public static of() {
-    return Object.assign({}, new Increment())
+    return new Increment()
   }
   constructor() {}
 }
