@@ -19,9 +19,9 @@ module.exports = merge(common, {
       ...SETTINGS.HTML_WEBPACK_PLUGIN,
       minify: {
         removeComments: true,
-        collapseWhitespace: true
-      }
-    })
+        collapseWhitespace: true,
+      },
+    }),
   ],
   optimization: {
     splitChunks: {
@@ -29,16 +29,16 @@ module.exports = merge(common, {
         vendor: {
           test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
           name: 'vendor',
-          chunks: 'all'
-        }
-      }
+          chunks: 'all',
+        },
+      },
     },
     minimizer: [
       new TerserPlugin({
         cache: true,
         parallel: true,
-        sourceMap: true
-      })
-    ]
-  }
+        sourceMap: true,
+      }),
+    ],
+  },
 })

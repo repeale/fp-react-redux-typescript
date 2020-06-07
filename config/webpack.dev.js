@@ -16,10 +16,10 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin(SETTINGS.HTML_WEBPACK_PLUGIN)
+    new HtmlWebpackPlugin(SETTINGS.HTML_WEBPACK_PLUGIN),
   ],
   devServer: {
     contentBase: SETTINGS.DIST_DIR,
-    hot: true
-  }
+    hot: true,
+  },
 })

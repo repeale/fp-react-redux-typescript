@@ -9,6 +9,6 @@ module.exports = {
   HTML_WEBPACK_PLUGIN: {
     template: 'src/index.html',
     hash: false,
-    inject: true
-  }
+    inject: true,
+  },
 }

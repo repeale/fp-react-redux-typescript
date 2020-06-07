@@ -22,12 +22,12 @@ const App = ({counter, onIncrement, onDecrement}: Props) => (
 )
 
 const mapStateToProps = (RootState: RootState) => ({
-  counter: RootState.app.counter
+  counter: RootState.app.counter,
 })
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>) => ({
   onDecrement: () => dispatch(Decrement.of()),
-  onIncrement: () => dispatch(Increment.of())
+  onIncrement: () => dispatch(Increment.of()),
 })
 
 export const component = connect(mapStateToProps, mapDispatchToProps)(App)
@@ -39,7 +39,7 @@ export interface State {
 }
 
 const defaultState: State = {
-  counter: 0
+  counter: 0,
 }
 
 export const reducer: Reducer<State, Action> = (
