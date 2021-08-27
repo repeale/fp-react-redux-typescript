@@ -1,12 +1,21 @@
 import {createStore, applyMiddleware} from 'redux'
-import thunk from 'redux-thunk'
-import {rootReducer} from './reducers/root'
+import thunkMiddleware from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly'
+
+import {rootReducer} from './reducers/root'
 import {plainAction} from './redux-middlewares/plainAction'
 
-export default function configureStore() {
-  return createStore(
+export const configureStore = () => {
+  const store = createStore(
     rootReducer,
-    composeWithDevTools(applyMiddleware(thunk, plainAction))
+    composeWithDevTools(applyMiddleware(...[thunkMiddleware, plainAction]))
   )
+
+  if (process.env.NODE_ENV !== 'production' && module.hot) {
+    module.hot.accept('./reducers/root', () =>
+      store.replaceReducer(rootReducer)
+    )
+  }
+
+  return store
 }

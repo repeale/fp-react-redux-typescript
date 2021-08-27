@@ -1,8 +1,8 @@
-const path = require('path')
+import path from 'path'
 
 const root = path.resolve(__dirname, '..')
 
-module.exports = {
+export const SETTINGS = {
   BASE_DIR: root,
   DIST_DIR: path.resolve(root, 'dist'),
   SRC_DIR: path.resolve(root, 'src'),

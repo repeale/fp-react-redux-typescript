@@ -1,17 +1,17 @@
-const {merge} = require('webpack-merge')
+import merge from 'webpack-merge'
 
 // --- config:common
-const common = require('./webpack.common.js')
+import {config} from './webpack.common'
 
 // --- plugins
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import TerserPlugin from 'terser-webpack-plugin'
 
 // --- settings
-const SETTINGS = require('./settings')
+import {SETTINGS} from './settings'
 
 // --- config:production
-module.exports = merge(common, {
+export default merge(config, {
   mode: 'production',
   devtool: 'source-map',
   plugins: [
@@ -35,7 +35,7 @@ module.exports = merge(common, {
     splitChunks: {
       cacheGroups: {
         vendor: {
-          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+          test: /[\\/]node_modules[\\/](react|react-dom|react-is)[\\/]/,
           name: 'vendor',
           chunks: 'all',
         },

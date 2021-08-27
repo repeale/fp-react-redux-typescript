@@ -1,12 +1,13 @@
 // --- plugins
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import {CleanWebpackPlugin} from 'clean-webpack-plugin'
 
 // --- settings
-const SETTINGS = require('./settings')
-const {HTML_WEBPACK_PLUGIN} = require('./settings')
+import {SETTINGS} from './settings'
 
-const webpackConfig = {
+import {Configuration} from 'webpack'
+
+export const config: Configuration = {
   entry: {
     app: ['./src/index.tsx'],
   },
@@ -31,9 +32,8 @@ const webpackConfig = {
     path: SETTINGS.DIST_DIR,
   },
   plugins: [
+    // @ts-ignore
     new CleanWebpackPlugin({verbose: true}),
-    new HtmlWebpackPlugin(HTML_WEBPACK_PLUGIN),
+    new HtmlWebpackPlugin(SETTINGS.HTML_WEBPACK_PLUGIN),
   ],
 }
-
-module.exports = webpackConfig
