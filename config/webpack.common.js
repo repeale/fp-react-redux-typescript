@@ -4,6 +4,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 // --- settings
 const SETTINGS = require('./settings')
+const {HTML_WEBPACK_PLUGIN} = require('./settings')
 
 const webpackConfig = {
   entry: {
@@ -12,33 +13,26 @@ const webpackConfig = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)?$/,
+        test: /\.tsx?$/,
         include: SETTINGS.SRC_DIR,
-        use: ['ts-loader'],
+        exclude: /node_modules/,
+        loader: 'ts-loader',
       },
       {
         test: /\.(js|jsx)$/,
         include: SETTINGS.SRC_DIR,
-        use: ['babel-loader'],
+        loader: 'babel-loader',
       },
     ],
   },
-  resolve: {
-    extensions: ['*', '.ts', '.tsx', '.js', '.jsx'],
-  },
+  resolve: {extensions: ['.ts', '.tsx', '.js']},
   output: {
-    filename: '[name].[hash].bundle.js',
+    filename: '[name].[contenthash].bundle.js',
     path: SETTINGS.DIST_DIR,
-    publicPath: '/',
-    pathinfo: false,
   },
   plugins: [
     new CleanWebpackPlugin({verbose: true}),
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-      hash: false,
-      inject: true,
-    }),
+    new HtmlWebpackPlugin(HTML_WEBPACK_PLUGIN),
   ],
 }
 

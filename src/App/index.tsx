@@ -11,7 +11,7 @@ interface Props {
   onDecrement: () => any
 }
 
-const App = ({counter, onIncrement, onDecrement}: Props) => (
+const AppComponent = ({counter, onIncrement, onDecrement}: Props) => (
   <div>
     <div>Counter: {counter}</div>
     <div>
@@ -30,7 +30,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>) => ({
   onIncrement: () => dispatch(Increment.of()),
 })
 
-export const component = connect(mapStateToProps, mapDispatchToProps)(App)
+export const App = connect(mapStateToProps, mapDispatchToProps)(AppComponent)
 
 // --- Reducer
 

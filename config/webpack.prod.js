@@ -1,4 +1,4 @@
-const merge = require('webpack-merge')
+const {merge} = require('webpack-merge')
 
 // --- config:common
 const common = require('./webpack.common.js')
@@ -20,6 +20,14 @@ module.exports = merge(common, {
       minify: {
         removeComments: true,
         collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
       },
     }),
   ],
@@ -33,12 +41,6 @@ module.exports = merge(common, {
         },
       },
     },
-    minimizer: [
-      new TerserPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true,
-      }),
-    ],
+    minimizer: [new TerserPlugin()],
   },
 })
