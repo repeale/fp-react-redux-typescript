@@ -17,21 +17,16 @@ export const config: Configuration = {
         test: /\.tsx?$/,
         include: SETTINGS.SRC_DIR,
         exclude: /node_modules/,
-        loader: 'ts-loader',
-      },
-      {
-        test: /\.(js|jsx)$/,
-        include: SETTINGS.SRC_DIR,
-        loader: 'babel-loader',
+        use: ['babel-loader', 'ts-loader'],
       },
     ],
   },
   resolve: {extensions: ['.ts', '.tsx', '.js']},
   output: {
-    filename: '[name].[contenthash].bundle.js',
     path: SETTINGS.DIST_DIR,
   },
   plugins: [
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     new CleanWebpackPlugin({verbose: true}),
     new HtmlWebpackPlugin(SETTINGS.HTML_WEBPACK_PLUGIN),

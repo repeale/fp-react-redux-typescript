@@ -1,25 +1,23 @@
 import * as React from 'react'
-import {connect} from 'react-redux'
+import {connect, ConnectedProps} from 'react-redux'
 import {Dispatch, Reducer} from 'redux'
 import {RootState} from '../reducers/root'
 
 // --- View
 
-interface Props {
-  counter: number
-  onIncrement: () => any
-  onDecrement: () => any
-}
+type Props = ReduxProps
 
-const AppComponent = ({counter, onIncrement, onDecrement}: Props) => (
-  <div>
-    <div>Counter: {counter}</div>
+const AppComponent = ({counter, onIncrement, onDecrement}: Props) => {
+  return (
     <div>
-      <button onClick={onDecrement}>-</button>
-      <button onClick={onIncrement}>+</button>
+      <div>Counter: {counter}</div>
+      <div>
+        <button onClick={onDecrement}>-</button>
+        <button onClick={onIncrement}>+</button>
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 const mapStateToProps = (RootState: RootState) => ({
   counter: RootState.app.counter,
@@ -30,7 +28,11 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>) => ({
   onIncrement: () => dispatch(Increment.of()),
 })
 
-export const App = connect(mapStateToProps, mapDispatchToProps)(AppComponent)
+const connector = connect(mapStateToProps, mapDispatchToProps)
+
+type ReduxProps = ConnectedProps<typeof connector>
+
+export const App = connector(AppComponent)
 
 // --- Reducer
 
@@ -65,7 +67,6 @@ class Decrement {
   public static of() {
     return new Decrement()
   }
-  constructor() {}
 }
 
 class Increment {
@@ -73,5 +74,4 @@ class Increment {
   public static of() {
     return new Increment()
   }
-  constructor() {}
 }

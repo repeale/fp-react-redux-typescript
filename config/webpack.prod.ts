@@ -14,6 +14,9 @@ import {SETTINGS} from './settings'
 export default merge(config, {
   mode: 'production',
   devtool: 'source-map',
+  output: {
+    filename: '[name].[contenthash].bundle.js',
+  },
   plugins: [
     new HtmlWebpackPlugin({
       ...SETTINGS.HTML_WEBPACK_PLUGIN,
@@ -41,6 +44,10 @@ export default merge(config, {
         },
       },
     },
-    minimizer: [new TerserPlugin()],
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+      }),
+    ],
   },
 })

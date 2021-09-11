@@ -13,7 +13,7 @@ import {SETTINGS} from './settings'
 // --- config:development
 export default merge(config, {
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'eval-source-map',
   plugins: [
     new HtmlWebpackPlugin(SETTINGS.HTML_WEBPACK_PLUGIN),
     new HotModuleReplacementPlugin(),
