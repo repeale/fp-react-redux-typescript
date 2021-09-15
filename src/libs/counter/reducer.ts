@@ -14,9 +14,9 @@ export const reducer: Reducer<State, Action> = (
   action
 ): State => {
   switch (action.type) {
-    case 'INCREMENT':
+    case '@appCounter/INCREMENT':
       return {counter: state.counter + 1}
-    case 'DECREMENT':
+    case '@appCounter/DECREMENT':
       return {counter: state.counter - 1}
     default:
       return state
