@@ -6,10 +6,14 @@ Simple starter project
 
 ## Features
 
-- React 16
-- Webpack 4
+- TypeScript
+- React 17
+- Webpack 5 with TS config
 - Babel 7
 - Hot Module Replacement
+- Browserslist polyfills with core-js
+- ESlint config with Prettier
+- Redux with redux-thunk
 
 ## Installation
 
