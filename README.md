@@ -6,14 +6,18 @@ Simple starter project
 
 ## Features
 
-- TypeScript
 - React 17
+- Redux with redux-thunk
+- TypeScript
+
 - Webpack 5 with TS config
-- Babel 7
+  - ts-loader
+  - babel-loader
 - Hot Module Replacement
+- Babel 7 preset env
+
 - Browserslist polyfills with core-js
 - ESlint config with Prettier
-- Redux with redux-thunk
 
 ## Installation
 
