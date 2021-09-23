@@ -1,16 +1,10 @@
 import merge from 'webpack-merge'
-
-// --- config:common
-import {config} from './webpack.common'
-
-// --- plugins
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
 
-// --- settings
+import {config} from './webpack.common'
 import {SETTINGS} from './settings'
 
-// --- config:production
 export default merge(config, {
   mode: 'production',
   devtool: 'source-map',

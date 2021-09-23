@@ -1,4 +1,5 @@
 import {Reducer} from 'redux'
+
 import {Action} from './actions'
 
 export interface State {

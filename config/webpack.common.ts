@@ -1,11 +1,8 @@
-// --- plugins
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import {CleanWebpackPlugin} from 'clean-webpack-plugin'
-
-// --- settings
-import {SETTINGS} from './settings'
-
 import {Configuration} from 'webpack'
+
+import {SETTINGS} from './settings'
 
 export const config: Configuration = {
   entry: {

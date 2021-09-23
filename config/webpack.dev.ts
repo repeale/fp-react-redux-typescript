@@ -1,16 +1,10 @@
 import {HotModuleReplacementPlugin} from 'webpack'
 import merge from 'webpack-merge'
-
-// --- config:common
-import {config} from './webpack.common'
-
-// --- plugins
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-// --- settings
+import {config} from './webpack.common'
 import {SETTINGS} from './settings'
 
-// --- config:development
 export default merge(config, {
   mode: 'development',
   devtool: 'eval-source-map',
