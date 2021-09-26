@@ -23,7 +23,7 @@ export const config: Configuration = {
     path: SETTINGS.DIST_DIR,
   },
   plugins: [
-    new CleanWebpackPlugin({verbose: true}),
+    new CleanWebpackPlugin({verbose: false}),
     new HtmlWebpackPlugin(SETTINGS.HTML_WEBPACK_PLUGIN),
   ],
 }
