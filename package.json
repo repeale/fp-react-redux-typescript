@@ -9,13 +9,15 @@
     "type": "git",
     "url": "https://github.com/repeale/fp-react-redux-typescript"
   },
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
     "start": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack serve --config config/webpack.development.ts --hot --progress --color --port 3000 --open",
     "build": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack --config config/webpack.production.ts --progress",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
     "test": "echo \"No test specified\" && exit 0"
-  },
-  "engines": {
-    "node": ">=14"
   },
   "dependencies": {
     "react": "17.0.2",
