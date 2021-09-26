@@ -23,8 +23,6 @@ export const config: Configuration = {
     path: SETTINGS.DIST_DIR,
   },
   plugins: [
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
     new CleanWebpackPlugin({verbose: true}),
     new HtmlWebpackPlugin(SETTINGS.HTML_WEBPACK_PLUGIN),
   ],

@@ -7,10 +7,10 @@ import {RootState} from '../../store'
 
 type Props = ReduxProps
 
-const AppComponent = ({counter, onIncrement, onDecrement}: Props) => {
+const AppComponent = ({count, onIncrement, onDecrement}: Props) => {
   return (
     <div>
-      <div>Counter: {counter}</div>
+      <div>Count: {count}</div>
       <div>
         <button onClick={onDecrement}>-</button>
         <button onClick={onIncrement}>+</button>
@@ -20,7 +20,7 @@ const AppComponent = ({counter, onIncrement, onDecrement}: Props) => {
 }
 
 const mapStateToProps = (state: RootState) => ({
-  counter: state.appCounter.counter,
+  count: state.counter.count,
 })
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>) => ({

@@ -14,10 +14,11 @@ Simple starter project
   - ts-loader
   - babel-loader
 - Hot Module Replacement
-- Babel 7 preset env
+- ES6+ Support via babel (v7)
 
-- Browserslist polyfills with core-js
-- ESlint config with Prettier
+- Browserslist
+- Polyfills via core-js
+- Linting via ESlint with Prettier
 
 ## Installation
 
