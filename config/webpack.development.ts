@@ -1,9 +1,9 @@
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 import {HotModuleReplacementPlugin} from 'webpack'
 import merge from 'webpack-merge'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-import {config} from './webpack.common'
 import {SETTINGS} from './settings'
+import {config} from './webpack.common'
 
 export default merge(config, {
   mode: 'development',
