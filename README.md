@@ -21,7 +21,7 @@
 git clone https://github.com/repeale/fp-react-redux-typescript.git your-app-name
 ```
 
-Remove the `.git` folder and change details within:
+- Remove the `.git` folder and change details within:
 
 ```
 package.json
