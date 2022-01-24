@@ -1,3 +1,3 @@
 {
-  "extends": "@repeale/eslint-config/react-ts-prettier"
+  "extends": ["@repeale/eslint-config/react-ts-prettier"]
 }

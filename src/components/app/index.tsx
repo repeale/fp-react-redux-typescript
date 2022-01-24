@@ -1,4 +1,3 @@
-import * as React from 'react'
 import {ConnectedProps, connect} from 'react-redux'
 import {Dispatch} from 'redux'
 
